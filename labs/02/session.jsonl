@@ -1,0 +1,1 @@
+{"type":"placeholder","message":"This file needs to be populated with a real Clawback session replay from solving Lab 02. Capture the session by solving the lab in Claude Code, then sanitize the .jsonl log (strip secrets, credentials, sensitive paths) and place it here."}
