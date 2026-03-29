@@ -1,0 +1,58 @@
+---
+name: "Lab 01: Your First Workflow"
+about: "Learn the issue -> branch -> code -> precheck -> scp -> PR loop"
+labels: ["lab"]
+---
+
+**Start branch:** `lab/01-start`
+**Solution tag:** `lab/01-solution`
+**Session replay:** `labs/01/session.jsonl`
+
+## Objective
+Learn the full mandatory workflow: issue -> branch -> code -> /precheck -> /scp -> PR -> close.
+
+## Prerequisites
+- [x] ccwork kit installed (`install.sh --check` all green)
+- [ ] This repo forked and cloned
+
+## Steps
+
+### Step 1: Create a branch
+**Do:** Create a feature branch for this issue.
+**Verify:** `git branch --show-current` starts with `feature/`
+**Learn:** Branch naming convention -- `<type>/<issue>-<description>`
+
+### Step 2: Make the change
+**Do:** Fix the off-by-one bug in `src/calculator.py` line 12.
+**Verify:** `pytest tests/test_calculator.py` passes
+**Learn:** Always run tests before committing -- the precheck gate enforces this.
+
+### Step 3: Run precheck
+**Do:** Run `/precheck`
+**Verify:** Checklist is presented with all items green
+**Learn:** The precheck gate -- code review, validation, and compliance verification before any commit.
+
+### Step 4: Stage, commit, and push
+**Do:** Run `/scp`
+**Verify:** Branch is pushed to origin, commit message follows convention
+**Learn:** The scp workflow -- stage, commit, push in one skill.
+
+### Step 5: Create a PR
+**Do:** Create a PR targeting `main` using `gh pr create`
+**Verify:** PR exists and references this issue with `Closes #N`
+**Learn:** PR descriptions link to issues so they auto-close on merge.
+
+### Step 6: Close this issue
+**Do:** Merge the PR and verify this issue closes
+**Verify:** Issue state is Closed
+**Learn:** Issue lifecycle -- work is tracked from creation to closure.
+
+## You Learned
+- [ ] Branch naming and issue association
+- [ ] The precheck gate
+- [ ] The scp workflow
+- [ ] PR creation with issue linkage
+- [ ] Issue lifecycle
+
+## Stuck?
+Load `labs/01/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch how this lab was solved step by step.
