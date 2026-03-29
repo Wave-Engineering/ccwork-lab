@@ -28,6 +28,17 @@ Labs teach by doing -- you create real branches, commits, PRs, and closed issues
 |-----|---------------|------|
 | 01 - Your First Workflow | issue -> branch -> code -> precheck -> scp -> PR -> close | ~15 min |
 | 02 - Identity and Check-In | /name, agent identity, /engage, session setup | ~10 min |
+| 05a - Design Your MCP Server | PRD writing, issue decomposition, /prepwaves, wave planning | ~20 min |
+| 05b - Build and Ship It | /nextwave, flight partitioning, code review, MCP registration | ~30 min |
+
+### The Capstone: Labs 05a + 05b
+
+Labs 05a and 05b are an end-to-end project where you design and build your own MCP tool server. Unlike Labs 01-02 which have fixed solutions, **you pick what to build** -- making it a real design exercise, not a tutorial.
+
+- **05a** teaches the design phase: PRD, issue decomposition, wave planning
+- **05b** teaches the execution phase: parallel agents, flight partitioning, merge, install
+
+The MCP server you build is yours to keep and use with Claude Code.
 
 ## Three Ways to Learn
 
@@ -42,12 +53,13 @@ Each lab supports three learning styles:
 - [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow) installed (`install.sh --check` all green)
 - GitHub CLI (`gh`) authenticated
 - Python 3.10+ (for lab exercises)
+- Bun runtime (for Lab 05 MCP server)
 
 ## Adding New Labs
 
 Labs are data, not code. To add a new lab:
 
-1. Create `.github/ISSUE_TEMPLATE/lab-NN-name.yml`
+1. Create `.github/ISSUE_TEMPLATE/lab-NN-name.md`
 2. Create a `lab/NN-start` branch with the starting state
 3. Solve the exercise, tag as `lab/NN-solution`
 4. Place the session replay at `labs/NN/session.jsonl`
