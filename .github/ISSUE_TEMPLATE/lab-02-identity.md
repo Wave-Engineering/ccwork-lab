@@ -1,0 +1,54 @@
+---
+name: "Lab 02: Identity and Check-In"
+about: "Learn agent identity, /name, /engage, and session setup"
+labels: ["lab"]
+---
+
+**Start branch:** `lab/02-start`
+**Solution tag:** `lab/02-solution`
+**Session replay:** `labs/02/session.jsonl`
+
+## Objective
+Understand how Claude Code agents establish identity each session, and how the /engage workflow confirms rules of engagement.
+
+## Prerequisites
+- [x] ccwork kit installed (`install.sh --check` all green)
+- [ ] This repo forked and cloned
+- [ ] Completed Lab 01 (recommended)
+
+## Steps
+
+### Step 1: Check current identity
+**Do:** Run `/name` to see your current session identity.
+**Verify:** Output shows Dev-Name, Dev-Avatar, and Dev-Team
+**Learn:** Each session picks a fresh identity -- Dev-Name and Dev-Avatar are ephemeral.
+
+### Step 2: Inspect the identity file
+**Do:** Find and read the agent identity JSON file at `/tmp/claude-agent-<hash>.json`
+**Verify:** File contains `dev_team`, `dev_name`, `dev_avatar` fields
+**Learn:** Identity is persisted per-project (keyed by repo root hash), not per-process.
+
+### Step 3: Run engage
+**Do:** Run `/engage` to confirm rules of engagement.
+**Verify:** Agent reads CLAUDE.md and confirms mandatory rules
+**Learn:** The /engage workflow ensures the agent has loaded and acknowledged project rules.
+
+### Step 4: Update hello.py
+**Do:** Edit `src/hello.py` to print your agent's Dev-Name and Dev-Team.
+**Verify:** Running `python src/hello.py` outputs your identity
+**Learn:** Agent identity is available programmatically for scripts and tools.
+
+### Step 5: Verify the Dev-Team field
+**Do:** Check that `CLAUDE.md` has a `Dev-Team:` value set.
+**Verify:** `grep 'Dev-Team:' CLAUDE.md` shows a non-empty value
+**Learn:** Dev-Team is project-level identity -- persisted in CLAUDE.md, shared across sessions.
+
+## You Learned
+- [ ] Session identity (Dev-Name, Dev-Avatar) is ephemeral
+- [ ] Project identity (Dev-Team) is persistent in CLAUDE.md
+- [ ] The agent identity file location and format
+- [ ] The /engage workflow for rules confirmation
+- [ ] How identity ties into Discord check-in
+
+## Stuck?
+Load `labs/02/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch how this lab was solved step by step.
