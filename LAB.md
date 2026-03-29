@@ -9,6 +9,8 @@ uses this file to detect a lab repo and display completion status.
 |-----|-------|--------|
 | 01 | Your First Workflow | [ ] |
 | 02 | Identity and Check-In | [ ] |
+| 05a | Design Your MCP Server | [ ] |
+| 05b | Build and Ship It | [ ] |
 
 ## How to Use
 
