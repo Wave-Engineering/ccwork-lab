@@ -1,56 +1,56 @@
 # ccwork-lab
 
-Hands-on training ground for the [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow).
+Hands-on training ground for the [Claude Code workflow kit](https://gitlab.com/waveeng/claudecode-workflow).
+
+> **Also available on GitHub:** [github.com/Wave-Engineering/ccwork-lab](https://github.com/Wave-Engineering/ccwork-lab)
 
 ## Quick Start
 
-1. **Fork this repo** to your own account
-2. **Clone your fork**: `gh repo fork Wave-Engineering/ccwork-lab --clone`
+1. **Fork this project** — click "Fork" on GitLab to create your own copy
+2. **Clone your fork**: `git clone <your-fork-url>`
 3. **Open Claude Code**: `cd ccwork-lab && claude`
-4. **List labs**: `/ccwork lab`
-5. **Start a lab**: `/ccwork lab "Your First Workflow"`
-
-## How Labs Work
-
-Each lab is a GitHub Issue Template. When you start a lab, the `/ccwork` skill:
-
-1. Creates an issue from the template in your fork
-2. Checks out the lab's starting branch (with planted bugs, missing features, etc.)
-3. Guides you through the exercise step by step
-4. Verifies your work against a known-good solution
-5. Offers a Clawback session replay if you want to see how it was solved
-
-Labs teach by doing -- you create real branches, commits, PRs, and closed issues in your own repo.
+4. **Start the first lab**: `/ccwork lab "Project Setup"`
 
 ## Available Labs
 
 | Lab | What You Learn | Time |
 |-----|---------------|------|
-| 01 - Your First Workflow | issue -> branch -> code -> precheck -> scp -> PR -> close | ~15 min |
-| 02 - Identity and Check-In | /name, agent identity, /engage, session setup | ~10 min |
+| 01 - Project Setup | /ccfold, CLAUDE.md, /engage, Dev-Team | ~15 min |
+| 02 - Your First Workflow | issue → branch → code → precheck → scp → MR → close | ~15 min |
+| 03 - Identity and Check-In | /name, agent identity, /engage, session setup | ~10 min |
+| 04 - Code Review | /review, severity ratings, fixing findings | ~15 min |
+| 05a - Design Your MCP Server | PRD writing, issue decomposition, /prepwaves | ~20 min |
+| 05b - Build and Ship It | /nextwave, flight partitioning, MCP registration | ~30 min |
+
+### The Capstone: Labs 05a + 05b
+
+Labs 05a and 05b are an end-to-end project where you design and build your own MCP tool server. Unlike Labs 01-04 which have guided solutions, **you pick what to build** — making it a real design exercise, not a tutorial.
+
+The MCP server you build is yours to keep and use with Claude Code.
 
 ## Three Ways to Learn
 
 Each lab supports three learning styles:
 
-- **Do it** -- `/ccwork lab "<name>"` guides you hands-on
-- **Watch it** -- Load `labs/NN/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch how it was solved
-- **Read it** -- Browse the issue template and solution tag for static reference
+- **Do it** — `/ccwork lab "<name>"` guides you hands-on
+- **Watch it** — Load `labs/NN/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch how it was solved
+- **Read it** — Browse the issue template and solution tag for static reference
+
+## Lab Branches and Tags
+
+Each lab has a starting branch, an init tag (immutable reset point), and a solution tag:
+
+```
+lab/01-start    → lab/01-init (tag)    → lab/01-solution (tag)
+lab/02-start    → lab/02-init (tag)    → lab/02-solution (tag)
+...
+```
+
+If you need to reset a lab: `git checkout -B lab/NN-start lab/NN-init`
 
 ## Prerequisites
 
-- [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow) installed (`install.sh --check` all green)
-- GitHub CLI (`gh`) authenticated
+- [Claude Code workflow kit](https://gitlab.com/waveeng/claudecode-workflow) installed (`install.sh --check` all green)
+- GitLab CLI (`glab`) authenticated
 - Python 3.10+ (for lab exercises)
-
-## Adding New Labs
-
-Labs are data, not code. To add a new lab:
-
-1. Create `.github/ISSUE_TEMPLATE/lab-NN-name.yml`
-2. Create a `lab/NN-start` branch with the starting state
-3. Solve the exercise, tag as `lab/NN-solution`
-4. Place the session replay at `labs/NN/session.jsonl`
-5. Update `LAB.md`
-
-No skill code changes needed -- the `/ccwork lab` handler reads templates dynamically.
+- Bun runtime (for Lab 05 MCP server)
