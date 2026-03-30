@@ -50,9 +50,9 @@ Learn the full mandatory workflow: issue → branch → code → /precheck → /
 **Learn:** Issue lifecycle — work is tracked from creation to closure.
 
 ### Step 7: Exercise — add a new operation
-**Do:** Add a `modulo(a, b)` function to `calculator.py` with proper tests. Go through the full workflow again: issue, branch, precheck, scp, PR, merge. This time, do it without step-by-step prompting — you know the loop now.
+**Do:** Add a `modulo(a, b)` function to `calculator.py` with proper tests. This time, use `/issue feature` to create the issue — describe what you want to add and the skill will draft a properly structured issue with the right template and labels. Then go through the full workflow: branch, code, precheck, choose your commit skill, PR, merge. Do it without step-by-step prompting — you know the loop now.
 **Verify:** New function exists, tests pass, PR merged, issue closed
-**Learn:** The second time through the loop should feel natural. Repetition builds muscle memory.
+**Learn:** The second time through the loop should feel natural. `/issue` handles the template and labels so you focus on the work, not the format.
 
 ## You Learned
 - [ ] Branch naming and issue association
@@ -60,4 +60,5 @@ Learn the full mandatory workflow: issue → branch → code → /precheck → /
 - [ ] The scp workflow
 - [ ] PR creation with issue linkage
 - [ ] Issue lifecycle
+- [ ] Structured issue creation with /issue
 - [ ] Confidence to run the loop independently
