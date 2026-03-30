@@ -1,25 +1,30 @@
 # Project Instructions for Claude Code
 
-This is the **ccwork-lab** training repository. It contains hands-on lab exercises
+This is the **ccwork-lab** training repository — a hands-on training ground
 for learning the Claude Code workflow kit.
+
+## Platform
+
+This project is on **GitHub**. Use `gh` CLI for all operations.
 
 ## Project Structure
 
-- `LAB.md` -- marker file listing available labs and completion status
-- `.github/ISSUE_TEMPLATE/lab-*.yml` -- lab exercise templates
-- `labs/NN/session.jsonl` -- Clawback session replays for each lab
-- `src/` -- source files (vary per lab branch)
-- `tests/` -- test files (vary per lab branch)
-- `scripts/ci/` -- CI validation scripts
+- `LAB.md` — marker file listing available labs and completion status
+- `.github/ISSUE_TEMPLATE/lab-*.md` — lab exercise templates
+- `labs/NN/session.jsonl` — Clawback session replays for each lab
+- `src/` — source files (vary per lab branch)
+- `tests/` — test files (vary per lab branch)
+- `scripts/ci/` — CI validation scripts
 
-## Lab Branches
+## Branching Strategy
 
-Each lab has a starting branch and a solution tag:
+```
+main (protected)
+  ├── feature/NNN-description
+  └── fix/NNN-description
+```
 
-- `lab/01-start` -- Your First Workflow (planted bug in calculator)
-- `lab/02-start` -- Identity and Check-In (clean state)
-- `lab/01-solution` -- Solution tag for lab 01
-- `lab/02-solution` -- Solution tag for lab 02
+Always branch from `main` or the lab's start branch.
 
 ## Testing
 
@@ -32,6 +37,16 @@ ruff check src/ tests/
 
 ```
 type(scope): brief description
+
+Closes #NNN
 ```
 
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
+
+## Mandatory Rules
+
+1. **Always have an issue** — never begin work without one
+2. **Test before push** — run `pytest` and `ruff check` before pushing
+3. **Pre-commit gate** — run `/precheck` before committing
+
+Dev-Team: ccwork-lab
