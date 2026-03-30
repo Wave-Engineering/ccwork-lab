@@ -7,8 +7,10 @@ uses this file to detect a lab repo and display completion status.
 
 | Lab | Title | Status |
 |-----|-------|--------|
-| 01 | Your First Workflow | [ ] |
-| 02 | Identity and Check-In | [ ] |
+| 01 | Project Setup | [ ] |
+| 02 | Your First Workflow | [ ] |
+| 03 | Identity and Check-In | [ ] |
+| 04 | Code Review | [ ] |
 | 05a | Design Your MCP Server | [ ] |
 | 05b | Build and Ship It | [ ] |
 
