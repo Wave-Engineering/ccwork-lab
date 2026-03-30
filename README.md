@@ -2,6 +2,8 @@
 
 Hands-on training ground for the [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow).
 
+> **Also available on GitLab:** [gitlab.com/waveeng/ccwork-lab](https://gitlab.com/waveeng/ccwork-lab)
+
 ## Quick Start
 
 1. **Use this template** — click "Use this template" on GitHub to create your own copy
