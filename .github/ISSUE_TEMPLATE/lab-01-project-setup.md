@@ -49,9 +49,10 @@ Set up a project for Claude Code workflow development. Learn how `/ccfold` gener
 ### Step 6: Exercise — customize a rule
 **Do:** First, run `/view src/app.py` to see what you're working with. Then:
 1. Add a project-specific section to CLAUDE.md — for example, a `## Project Conventions` section with a rule like "All functions must have docstrings" or "Prefer list comprehensions over map/filter"
-2. Make a small code change to `src/app.py` that follows your new rule, using the full workflow (create issue → branch → code → precheck → choose your commit skill)
+2. Create an issue for your change using `/issue feature` — describe what you want to add and the `/issue` skill will draft a properly structured issue for you
+3. Create a branch, make the code change to `src/app.py`, run `/precheck`, then choose your commit skill
 **Verify:** The change follows both the standard workflow rules AND your custom rule
-**Learn:** CLAUDE.md is extensible — teams add project-specific conventions that the agent enforces alongside the standard gates. Your custom rules have the same weight as the built-in ones.
+**Learn:** CLAUDE.md is extensible — teams add project-specific conventions that the agent enforces alongside the standard gates. The `/issue` skill creates properly templated issues with the right labels so you don't have to remember the format.
 
 ## You Learned
 - [ ] What CLAUDE.md does and why it matters
@@ -60,3 +61,4 @@ Set up a project for Claude Code workflow development. Learn how `/ccfold` gener
 - [ ] Dev-Team identity and its purpose
 - [ ] The /engage handshake
 - [ ] How to extend CLAUDE.md with custom rules
+- [ ] How /issue creates structured issues
