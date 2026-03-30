@@ -1,11 +1,13 @@
 # ccwork-lab
 
-Hands-on training ground for the [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow).
+Hands-on training ground for the [Claude Code workflow kit](https://gitlab.com/waveeng/claudecode-workflow).
+
+> **Also available on GitHub:** [github.com/Wave-Engineering/ccwork-lab](https://github.com/Wave-Engineering/ccwork-lab)
 
 ## Quick Start
 
-1. **Use this template** — click "Use this template" on GitHub to create your own copy
-2. **Clone your repo**: `git clone <your-repo-url>`
+1. **Fork this project** — click "Fork" on GitLab to create your own copy
+2. **Clone your fork**: `git clone <your-fork-url>`
 3. **Open Claude Code**: `cd ccwork-lab && claude`
 4. **Start the first lab**: `/ccwork lab "Project Setup"`
 
@@ -14,7 +16,7 @@ Hands-on training ground for the [Claude Code workflow kit](https://github.com/W
 | Lab | What You Learn | Time |
 |-----|---------------|------|
 | 01 - Project Setup | /ccfold, CLAUDE.md, /engage, Dev-Team | ~15 min |
-| 02 - Your First Workflow | issue → branch → code → precheck → scp → PR → close | ~15 min |
+| 02 - Your First Workflow | issue → branch → code → precheck → scp → MR → close | ~15 min |
 | 03 - Identity and Check-In | /name, agent identity, /engage, session setup | ~10 min |
 | 04 - Code Review | /review, severity ratings, fixing findings | ~15 min |
 | 05a - Design Your MCP Server | PRD writing, issue decomposition, /prepwaves | ~20 min |
@@ -48,7 +50,7 @@ If you need to reset a lab: `git checkout -B lab/NN-start lab/NN-init`
 
 ## Prerequisites
 
-- [Claude Code workflow kit](https://github.com/Wave-Engineering/claudecode-workflow) installed (`install.sh --check` all green)
-- GitHub CLI (`gh`) authenticated
+- [Claude Code workflow kit](https://gitlab.com/waveeng/claudecode-workflow) installed (`install.sh --check` all green)
+- GitLab CLI (`glab`) authenticated
 - Python 3.10+ (for lab exercises)
 - Bun runtime (for Lab 05 MCP server)
