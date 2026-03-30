@@ -20,7 +20,7 @@ Learn how to use `/review` to catch code quality issues, interpret findings by s
 ## Steps
 
 ### Step 1: Explore the flawed code
-**Do:** Read `src/formatter.py`. Notice the style violations, dead code, and subtle bugs.
+**Do:** Run `/view src/formatter.py` to open the code in your editor. Notice the style violations, dead code, and subtle bugs.
 **Verify:** You can identify at least 2 issues by reading the code
 **Learn:** Code review isn't just about style — it catches logic bugs that tests might miss.
 
@@ -45,12 +45,12 @@ Learn how to use `/review` to catch code quality issues, interpret findings by s
 **Learn:** The precheck gate requires high-risk findings to be resolved before commit.
 
 ### Step 6: Commit via the workflow
-**Do:** Run `/precheck`, then `/scp` after approval.
+**Do:** Run `/precheck`, then choose your commit skill after approval.
 **Verify:** Clean commit with code review passed in the checklist
 **Learn:** Code review is built into the pre-commit gate — it's not optional, it's structural.
 
 ### Step 7: Exercise — make your own judgment calls
-**Do:** Now address the remaining cosmetic findings. For each one, decide: fix it, or leave it and explain why. There's no single right answer — some cosmetic changes improve readability, others are just churn. Commit your decisions via the workflow.
+**Do:** Now address the remaining cosmetic findings. For each one, decide: fix it, or leave it and explain why. Create an issue for the work using `/issue chore` — describe the cosmetic cleanup and your judgment rationale. Then commit your decisions via the full workflow.
 **Verify:** You can justify each decision (fix or leave) with a clear reason
 **Learn:** Senior engineering judgment isn't about following every rule — it's about knowing when a rule serves the code and when it doesn't.
 
@@ -60,3 +60,4 @@ Learn how to use `/review` to catch code quality issues, interpret findings by s
 - [ ] The difference between "tests pass" and "code is clean"
 - [ ] How code review integrates into the precheck gate
 - [ ] Making and justifying judgment calls on findings
+- [ ] Using /issue to track even small decisions
