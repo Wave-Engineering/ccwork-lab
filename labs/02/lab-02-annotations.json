@@ -1,0 +1,113 @@
+{
+  "session_id": "lab-02-your-first-workflow",
+  "sections": [
+    {"id": "sec-engage", "label": "Session Start & /engage", "start_beat": 0, "end_beat": 18, "color": "blue"},
+    {"id": "sec-lab-setup", "label": "Lab Setup & Issue Creation", "start_beat": 19, "end_beat": 51, "color": "purple"},
+    {"id": "sec-bug-discovery", "label": "Bug Discovery via Code Review", "start_beat": 52, "end_beat": 63, "color": "red"},
+    {"id": "sec-bug-fix", "label": "Bug Fix & Test Verification", "start_beat": 64, "end_beat": 80, "color": "green"},
+    {"id": "sec-precheck", "label": "First Precheck Gate", "start_beat": 81, "end_beat": 103, "color": "orange"},
+    {"id": "sec-ship-auth", "label": "Push, MR & Auth Troubleshooting", "start_beat": 104, "end_beat": 136, "color": "amber"},
+    {"id": "sec-merge", "label": "Merge & Auto-Close", "start_beat": 137, "end_beat": 160, "color": "teal"},
+    {"id": "sec-second-loop", "label": "Second Loop: Modulo Feature", "start_beat": 161, "end_beat": 208, "color": "indigo"},
+    {"id": "sec-full-pipeline", "label": "Full Pipeline: /scpmmr", "start_beat": 209, "end_beat": 263, "color": "slate"}
+  ],
+  "callouts": [
+    {
+      "id": "cal-skill-engage",
+      "after_beat": 0,
+      "style": "note",
+      "content": "SKILL: /engage — Session onboarding ritual. Reads CLAUDE.md, confirms rules of engagement, and loads any existing plans. Run this at the start of every working session to ensure the agent is operating under the right constraints."
+    },
+    {
+      "id": "cal-skill-ccwork",
+      "after_beat": 19,
+      "style": "note",
+      "content": "SKILL: /ccwork — Onboarding hub and lab runner. Loads lab exercises, creates tracking issues, and sets up starting branches."
+    },
+    {
+      "id": "cal-skill-view",
+      "after_beat": 54,
+      "style": "note",
+      "content": "SKILL: /view — Opens a file in the system's default GUI viewer for visual inspection outside the terminal."
+    },
+    {
+      "id": "cal-skill-precheck",
+      "after_beat": 81,
+      "style": "note",
+      "content": "SKILL: /precheck — Pre-commit quality gate. Verifies branch/issue linkage, runs tests and lint, executes code review, and presents the mandatory checklist. The single most important gate in the workflow."
+    },
+    {
+      "id": "cal-skill-scpmr",
+      "after_beat": 104,
+      "style": "note",
+      "content": "SKILL: /scpmr — Stage → Commit → Push → create MR. Stops before merge, letting you review the MR in GitLab/GitHub before deciding to merge. Use when you want a review step between push and merge."
+    },
+    {
+      "id": "cal-skill-mmr",
+      "after_beat": 137,
+      "style": "note",
+      "content": "SKILL: /mmr — Merge an existing MR with squash and source branch deletion. The final step when /scpmr was used instead of /scpmmr."
+    },
+    {
+      "id": "cal-skill-issue",
+      "after_beat": 161,
+      "style": "note",
+      "content": "SKILL: /issue — Create structured issues (feature, bug, chore, docs) with proper templates, labels, and acceptance criteria. Supports both GitHub and GitLab."
+    },
+    {
+      "id": "cal-skill-ibm",
+      "after_beat": 176,
+      "style": "note",
+      "content": "SKILL: /ibm — Issue-Branch-MR workflow status check. Shows whether you have an issue, a linked branch, and an MR — and flags what's missing. A quick health check on your workflow discipline."
+    },
+    {
+      "id": "cal-skill-scpmmr",
+      "after_beat": 230,
+      "style": "note",
+      "content": "SKILL: /scpmmr — Full pipeline: Stage → Commit → Push → create MR → Merge. Combines /scpmr and /mmr into one command. Still requires precheck approval before executing."
+    },
+    {
+      "id": "cal-platform-mistake",
+      "after_beat": 38,
+      "style": "warning",
+      "content": "The agent tried `gh` (GitHub CLI) on a GitLab project before self-correcting to `glab`. Platform detection matters — CLAUDE.md defines which CLI to use based on the git remote URL. Without that rule, the agent would keep guessing."
+    },
+    {
+      "id": "cal-reviewer-finds-bug",
+      "after_beat": 63,
+      "style": "note",
+      "content": "The code-reviewer agent found the `+ 1` bug at 100% confidence. This is the value of automated review — it catches what a human eye might skim over. The reviewer runs as a subagent, isolated from the main conversation context."
+    },
+    {
+      "id": "cal-precheck-why",
+      "after_beat": 103,
+      "style": "note",
+      "content": "The precheck gate verifies: branch linked to issue, tests pass, lint clean, code reviewed, no orphan TODOs. This is where most AI coding assistants fall short — they write code but skip the quality loop. The gate is mandatory per CLAUDE.md."
+    },
+    {
+      "id": "cal-auth-token",
+      "after_beat": 125,
+      "style": "warning",
+      "content": "SSH keys and API tokens serve different purposes. Git push worked via SSH, but the GitLab API (for creating MRs) needs a personal access token. This is a common gotcha in CI/CD setups — two separate auth channels for the same platform."
+    },
+    {
+      "id": "cal-auto-close",
+      "after_beat": 160,
+      "style": "note",
+      "content": "The `Closes #3` keyword in the MR description triggered automatic issue closure on merge. This is GitLab's built-in issue linking — the commit message or MR body drives the state machine. No manual cleanup needed."
+    },
+    {
+      "id": "cal-second-loop",
+      "after_beat": 175,
+      "style": "note",
+      "content": "This is the pedagogical heart of Lab 02: the student runs the full workflow a second time, but now independently. Issue → Branch → Code → Review → Merge. Repetition with increasing autonomy is how the workflow becomes muscle memory."
+    },
+    {
+      "id": "cal-pattern-matching",
+      "after_beat": 196,
+      "style": "note",
+      "content": "Watch how the agent models the modulo function after the existing divide function — same guard clause pattern, same docstring style, same test structure. Following established patterns keeps a codebase consistent and reviewable."
+    }
+  ],
+  "artifacts": []
+}

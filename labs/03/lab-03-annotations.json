@@ -1,0 +1,98 @@
+{
+  "session_id": "lab-03-identity-and-check-in",
+  "sections": [
+    {"id": "sec-setup", "label": "Lab Setup & Identity Init", "start_beat": 0, "end_beat": 35, "color": "blue"},
+    {"id": "sec-identity", "label": "Identity Exploration: /name & /engage", "start_beat": 36, "end_beat": 67, "color": "purple"},
+    {"id": "sec-in-character", "label": "In-Character Hello.py Edit", "start_beat": 68, "end_beat": 90, "color": "green"},
+    {"id": "sec-design", "label": "Dashboard Design: Layout & Colors", "start_beat": 91, "end_beat": 106, "color": "pink"},
+    {"id": "sec-ibm-correction", "label": "Workflow Correction: Issue Before Code", "start_beat": 107, "end_beat": 136, "color": "red"},
+    {"id": "sec-implementation", "label": "Dashboard Implementation with Rich", "start_beat": 137, "end_beat": 215, "color": "amber"},
+    {"id": "sec-precheck", "label": "Precheck & Code Review Fixes", "start_beat": 216, "end_beat": 275, "color": "orange"},
+    {"id": "sec-pipeline", "label": "Pipeline & Auth Recovery", "start_beat": 276, "end_beat": 335, "color": "teal"},
+    {"id": "sec-completion", "label": "Lab Completion", "start_beat": 336, "end_beat": 354, "color": "indigo"}
+  ],
+  "callouts": [
+    {
+      "id": "cal-skill-ccwork",
+      "after_beat": 0,
+      "style": "note",
+      "content": "SKILL: /ccwork — Onboarding hub and lab runner. Loads lab exercises, creates tracking issues, and sets up starting branches."
+    },
+    {
+      "id": "cal-skill-name",
+      "after_beat": 36,
+      "style": "note",
+      "content": "SKILL: /name — Report or pick the agent's session identity (Dev-Name, Dev-Avatar, Dev-Team). The identity is stored in a JSON file keyed by the MD5 hash of the project root, so it's project-scoped but session-ephemeral."
+    },
+    {
+      "id": "cal-skill-engage",
+      "after_beat": 55,
+      "style": "note",
+      "content": "SKILL: /engage — Session onboarding ritual. Reads CLAUDE.md, confirms rules of engagement, and loads any existing plans. Always run this at session start."
+    },
+    {
+      "id": "cal-skill-view",
+      "after_beat": 63,
+      "style": "note",
+      "content": "SKILL: /view — Opens a file in the system's default GUI viewer for visual inspection outside the terminal."
+    },
+    {
+      "id": "cal-skill-precheck",
+      "after_beat": 216,
+      "style": "note",
+      "content": "SKILL: /precheck — Pre-commit quality gate. Verifies branch/issue linkage, runs tests and lint, executes code review, and presents the mandatory checklist."
+    },
+    {
+      "id": "cal-two-layer-identity",
+      "after_beat": 43,
+      "style": "note",
+      "content": "The two-layer identity model: Dev-Team is project-level (persists in CLAUDE.md across sessions), while Dev-Name and Dev-Avatar are session-level (stored in /tmp, keyed by MD5 hash of the project root). This means each new session gets a fresh persona, but the team affiliation is stable."
+    },
+    {
+      "id": "cal-negative-assertion",
+      "after_beat": 85,
+      "style": "note",
+      "content": "The test only checks that the placeholder text is gone — it doesn't assert specific replacement text. This is negative-assertion test design: validate that work was done without constraining how. It gives the agent creative freedom while still verifying the lab objective."
+    },
+    {
+      "id": "cal-design-before-code",
+      "after_beat": 106,
+      "style": "note",
+      "content": "Watch the design conversation: layout strategy (tiled cards with terminal-width awareness), library choice (Rich vs hand-rolled), and color palette (cyberpunk theme) — all decided before a single line of code. This front-loading of design decisions prevents rework."
+    },
+    {
+      "id": "cal-ibm-correction",
+      "after_beat": 109,
+      "style": "warning",
+      "content": "The user catches the agent about to start coding without an issue. 'Before we build it we need to /ibm.' This is the Issue → Branch → MR discipline in action — even when excitement about a feature runs high, the workflow comes first. The agent had the right instinct but wrong sequence."
+    },
+    {
+      "id": "cal-term-dumb",
+      "after_beat": 206,
+      "style": "note",
+      "content": "TERM=dumb is the trick for testing Rich output in CI/headless environments. Rich auto-detects terminal capabilities and adjusts output — setting TERM=dumb forces plain text mode, making test assertions predictable regardless of where they run."
+    },
+    {
+      "id": "cal-did-we-test",
+      "after_beat": 273,
+      "style": "warning",
+      "content": "The user challenges the 'tested' checkbox: 'Did we test it?' The agent listed actual execution runs as evidence. Claiming 'tested' means you ran it — not that it should work, not that the linter passed. This is the difference between the checklist being a rubber stamp vs. a real gate."
+    },
+    {
+      "id": "cal-scpmmr-gates",
+      "after_beat": 335,
+      "style": "note",
+      "content": "Even though /scpmmr is a single command, it didn't skip any safety gates — precheck was verified, approval was obtained, each step was confirmed. Automation doesn't mean bypassing quality checks; it means executing them consistently."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "art-color-palette",
+      "after_beat": 106,
+      "title": "Cyberpunk Dashboard Color Palette",
+      "description": "The color scheme designed for the identity dashboard",
+      "content_type": "markdown",
+      "content": "| Role | Color | Hex | Usage |\n|------|-------|-----|-------|\n| Primary | Matrix Green | `#00ff41` | Borders, structure |\n| Secondary | Deep Fuchsia | `#e100ff` | Values, emphasis |\n| Accent | Cyan | `#00ffff` | Metadata, accents |\n| Base | Dim White | — | Body text |"
+    }
+  ]
+}

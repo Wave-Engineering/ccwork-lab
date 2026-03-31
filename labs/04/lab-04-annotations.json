@@ -1,0 +1,88 @@
+{
+  "session_id": "lab-04-code-review",
+  "sections": [
+    {"id": "sec-setup", "label": "Lab Setup & Orientation", "start_beat": 0, "end_beat": 31, "color": "blue"},
+    {"id": "sec-manual-review", "label": "Manual Code Review Exercise", "start_beat": 32, "end_beat": 46, "color": "purple"},
+    {"id": "sec-auto-review", "label": "Automated /review & Triage", "start_beat": 47, "end_beat": 59, "color": "teal"},
+    {"id": "sec-issue-workflow", "label": "Findings → Tracked Issues", "start_beat": 60, "end_beat": 104, "color": "green"},
+    {"id": "sec-fix-highrisk", "label": "Fix Cycle 1: High-Risk Bugs", "start_beat": 105, "end_beat": 137, "color": "red"},
+    {"id": "sec-ship-first", "label": "Precheck & Ship First Fixes", "start_beat": 138, "end_beat": 194, "color": "orange"},
+    {"id": "sec-fix-cleanup", "label": "Fix Cycle 2: Cleanup & Naming", "start_beat": 195, "end_beat": 271, "color": "amber"},
+    {"id": "sec-completion", "label": "Lab Completion", "start_beat": 272, "end_beat": 310, "color": "indigo"}
+  ],
+  "callouts": [
+    {
+      "id": "cal-skill-ccwork",
+      "after_beat": 0,
+      "style": "note",
+      "content": "SKILL: /ccwork — Onboarding hub and lab runner. Loads lab exercises, creates tracking issues, and sets up starting branches."
+    },
+    {
+      "id": "cal-skill-view",
+      "after_beat": 31,
+      "style": "note",
+      "content": "SKILL: /view — Opens a file in the system's default GUI viewer for visual inspection outside the terminal."
+    },
+    {
+      "id": "cal-skill-review",
+      "after_beat": 47,
+      "style": "note",
+      "content": "SKILL: /review — Runs the code-reviewer agent on a file, staged changes, or branch diff. Returns findings with severity ratings and confidence scores. This is Lab 04's star skill — it catches quality issues that tests miss."
+    },
+    {
+      "id": "cal-skill-precheck",
+      "after_beat": 138,
+      "style": "note",
+      "content": "SKILL: /precheck — Pre-commit quality gate. Verifies branch/issue linkage, runs tests and lint, executes code review, and presents the mandatory checklist."
+    },
+    {
+      "id": "cal-skill-scpmmr",
+      "after_beat": 161,
+      "style": "note",
+      "content": "SKILL: /scpmmr — Full pipeline: Stage → Commit → Push → create MR → Merge. Requires precheck approval before executing."
+    },
+    {
+      "id": "cal-eyes-first",
+      "after_beat": 34,
+      "style": "note",
+      "content": "The lab intentionally asks the student to review the code by eye BEFORE running any automated tools. Building human review instincts matters — automated tools are a complement, not a replacement."
+    },
+    {
+      "id": "cal-tests-pass-not-clean",
+      "after_beat": 46,
+      "style": "warning",
+      "content": "100% test pass rate with flawed code. This is the core lesson of Lab 04: passing tests verify behavior, not quality. Off-by-one errors, silent failures, and naming violations all slip through a green test suite. Code review catches what tests miss."
+    },
+    {
+      "id": "cal-triage-severity",
+      "after_beat": 59,
+      "style": "note",
+      "content": "Watch BJ's triage reasoning — implicit type casting ranks as worst because it's 'hard to debug,' not because it crashes. Senior engineers weight findings by cognitive load and maintenance cost, not just crash severity. This is the skill /review helps develop."
+    },
+    {
+      "id": "cal-findings-to-issues",
+      "after_beat": 63,
+      "style": "note",
+      "content": "BJ's pivot here is the professional move: review findings become tracked issues, not just inline fixes. This creates an audit trail — you can trace every code change back to a finding. Bundling related fixes into one issue avoids MR sprawl."
+    },
+    {
+      "id": "cal-tests-before-fix",
+      "after_beat": 106,
+      "style": "note",
+      "content": "Notice the agent reads the test file BEFORE touching the source code. Understanding existing test coverage tells you what's already guarded and what gaps to fill. Fix the code, then verify the tests actually catch the old behavior."
+    },
+    {
+      "id": "cal-second-review",
+      "after_beat": 137,
+      "style": "note",
+      "content": "Running /review again after fixes is the verification loop. The second review confirms high-risk findings are resolved and surfaces any regressions from the fix itself. Review → Fix → Re-review is the complete quality cycle."
+    },
+    {
+      "id": "cal-wont-sleep",
+      "after_beat": 195,
+      "style": "note",
+      "content": "BJ's instinct to address deferred findings ('I won't sleep knowing they exist') reflects a healthy quality culture. The precheck presented these as low-risk deferrals — but the engineer chose to fix them anyway. Deferred doesn't mean ignored."
+    }
+  ],
+  "artifacts": []
+}

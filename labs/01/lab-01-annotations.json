@@ -1,0 +1,82 @@
+{
+  "session_id": "lab-01-project-setup",
+  "sections": [
+    {"id": "sec-onboard", "label": "Lab Onboarding & Issue Creation", "start_beat": 0, "end_beat": 52, "color": "blue"},
+    {"id": "sec-ccfold", "label": "CLAUDE.md Generation with /ccfold", "start_beat": 55, "end_beat": 94, "color": "purple"},
+    {"id": "sec-review-rules", "label": "Understanding the Rules of Engagement", "start_beat": 95, "end_beat": 126, "color": "teal"},
+    {"id": "sec-plan-work", "label": "Scoping the Work: Lint Script", "start_beat": 127, "end_beat": 147, "color": "green"},
+    {"id": "sec-implement", "label": "Implementation: Script, Conventions, Docs", "start_beat": 148, "end_beat": 200, "color": "amber"},
+    {"id": "sec-precheck", "label": "Pre-Commit Gate & Code Review", "start_beat": 201, "end_beat": 214, "color": "orange"},
+    {"id": "sec-ship", "label": "Push, MR, and Auth Troubleshooting", "start_beat": 215, "end_beat": 310, "color": "red"},
+    {"id": "sec-completion", "label": "Lab Completion", "start_beat": 311, "end_beat": 340, "color": "indigo"}
+  ],
+  "callouts": [
+    {
+      "id": "cal-skill-ccwork",
+      "after_beat": 0,
+      "style": "note",
+      "content": "SKILL: /ccwork — The onboarding hub and lab runner. It loads lab exercises, creates tracking issues, and sets up starting branches. This is your entry point for every lab."
+    },
+    {
+      "id": "cal-skill-ccfold",
+      "after_beat": 55,
+      "style": "note",
+      "content": "SKILL: /ccfold — Fetches the shared upstream CLAUDE.md template and merges it with local project customizations. One canonical template across all repos, with project-specific overrides preserved."
+    },
+    {
+      "id": "cal-skill-view",
+      "after_beat": 95,
+      "style": "note",
+      "content": "SKILL: /view — Opens a file in the system's default GUI viewer. Lets you inspect files visually outside the terminal, useful for reviewing code or documents before modifying them."
+    },
+    {
+      "id": "cal-skill-precheck",
+      "after_beat": 167,
+      "style": "note",
+      "content": "SKILL: /precheck — The pre-commit quality gate. Verifies branch/issue linkage, runs tests and lint, executes code review, and presents the mandatory checklist. Nothing gets committed without passing this."
+    },
+    {
+      "id": "cal-skill-scpmmr",
+      "after_beat": 202,
+      "style": "note",
+      "content": "SKILL: /scpmmr — Full pipeline in one command: Stage → Commit → Push → create MR → Merge. Despite being a single command, it doesn't skip any safety gates — precheck must pass and approval must be granted first."
+    },
+    {
+      "id": "cal-no-claudemd",
+      "after_beat": 52,
+      "style": "note",
+      "content": "This is what 'vanilla mode' looks like — Claude Code without a CLAUDE.md has no project context, no conventions, no guardrails. Everything that follows in this lab builds the scaffolding that makes the agent effective."
+    },
+    {
+      "id": "cal-devteam",
+      "after_beat": 114,
+      "style": "note",
+      "content": "Dev-Team is project-level identity — it persists in CLAUDE.md across all sessions. Dev-Name and Dev-Avatar are session-level — a fresh identity each time. This separation lets the agent belong to a team while still being individually identifiable."
+    },
+    {
+      "id": "cal-scoping",
+      "after_beat": 139,
+      "style": "note",
+      "content": "Watch the scoping negotiation here. The user proposed linting + convention updates. The agent assessed the project's existing tooling and recommended narrowing scope to just the lint script (since validate-lab.sh already existed). Good agents help scope work, not just execute it."
+    },
+    {
+      "id": "cal-issue-first",
+      "after_beat": 141,
+      "style": "warning",
+      "content": "Notice: the agent creates an issue BEFORE writing any code. This is the Issue → Branch → Code → Review → Merge workflow. Skipping the issue means no traceability, no linked MR, and no way to close the loop. This rule is enforced by CLAUDE.md."
+    },
+    {
+      "id": "cal-precheck-gate",
+      "after_beat": 201,
+      "style": "note",
+      "content": "The pre-commit checklist is the quality gate. Every checkbox requires actual verification — not assumptions. 'Pre-commit passes' means the agent ran it, not 'it should pass.' This is one of the most important patterns in the workflow."
+    },
+    {
+      "id": "cal-auth-recovery",
+      "after_beat": 248,
+      "style": "warning",
+      "content": "Auth failures are one of the most common blockers in real workflows. The agent hit a missing GitLab token, the session restarted twice, and the user had to provide the WE_GITLAB_TOKEN env var. This is realistic — not everything goes smoothly on the first try."
+    }
+  ],
+  "artifacts": []
+}
