@@ -2,60 +2,162 @@
   "session_id": "lab-05b",
   "sections": [
     {
+      "id": "sec-kickoff",
+      "label": "Lab 05b Kickoff & /engage",
+      "start_beat": 0,
+      "end_beat": 27,
+      "color": "blue"
+    },
+    {
+      "id": "sec-wave1",
+      "label": "Wave 1: Foundation",
+      "start_beat": 28,
+      "end_beat": 130,
+      "color": "purple"
+    },
+    {
+      "id": "sec-wave2",
+      "label": "Wave 2: Core MCP Tools",
+      "start_beat": 131,
+      "end_beat": 276,
+      "color": "green"
+    },
+    {
+      "id": "sec-wave3",
+      "label": "Wave 3: Automation Layer",
+      "start_beat": 277,
+      "end_beat": 375,
+      "color": "teal"
+    },
+    {
+      "id": "sec-wave4",
+      "label": "Wave 4: Integration & Protocol Violation",
+      "start_beat": 376,
+      "end_beat": 509,
+      "color": "red"
+    },
+    {
+      "id": "sec-wave5",
+      "label": "Wave 5: Verification & Install Bug Fix",
+      "start_beat": 510,
+      "end_beat": 621,
+      "color": "amber"
+    },
+    {
       "id": "sec-emergency",
       "label": "Emergency: Classifier Subprocess Hangs",
-      "start_beat": 0,
-      "end_beat": 50,
+      "start_beat": 622,
+      "end_beat": 672,
       "color": "red"
     },
     {
       "id": "sec-prodcon",
       "label": "Producer-Consumer Architecture Refactor",
-      "start_beat": 51,
-      "end_beat": 200,
+      "start_beat": 673,
+      "end_beat": 822,
       "color": "purple"
     },
     {
       "id": "sec-design",
       "label": "Design: Quiescence Mode & Suspend Command",
-      "start_beat": 201,
-      "end_beat": 400,
+      "start_beat": 823,
+      "end_beat": 1022,
       "color": "blue"
     },
     {
       "id": "sec-issue",
       "label": "Issue Creation & Planning",
-      "start_beat": 401,
-      "end_beat": 500,
-      "color": "cyan"
+      "start_beat": 1023,
+      "end_beat": 1122,
+      "color": "teal"
     },
     {
       "id": "sec-impl",
       "label": "Implementation",
-      "start_beat": 501,
-      "end_beat": 800,
+      "start_beat": 1123,
+      "end_beat": 1422,
       "color": "green"
     },
     {
       "id": "sec-testing",
       "label": "Live Testing & Schema Debugging",
-      "start_beat": 801,
-      "end_beat": 950,
+      "start_beat": 1423,
+      "end_beat": 1572,
       "color": "orange"
     },
     {
       "id": "sec-review",
       "label": "Code Review & Fixes",
-      "start_beat": 951,
-      "end_beat": 1000,
-      "color": "yellow"
+      "start_beat": 1573,
+      "end_beat": 1622,
+      "color": "amber"
     },
     {
       "id": "sec-merge",
       "label": "Pre-commit & Merge",
-      "start_beat": 1001,
-      "end_beat": 1075,
+      "start_beat": 1623,
+      "end_beat": 1697,
       "color": "indigo"
+    }
+  ],
+  "callouts": [
+    {
+      "id": "cal-skill-engage",
+      "after_beat": 27,
+      "style": "note",
+      "content": "SKILL: /engage \u2014 Session onboarding ritual. Re-run here because the session is transitioning from Lab 05a (design) to Lab 05b (build) without a restart."
+    },
+    {
+      "id": "cal-skill-nextwave",
+      "after_beat": 28,
+      "style": "note",
+      "content": "SKILL: /nextwave \u2014 Executes the next pending wave of parallel spec-driven sub-agents. Each agent runs on an isolated git worktree to prevent conflicts. The parent agent reviews all output before merging."
+    },
+    {
+      "id": "cal-flight-model",
+      "after_beat": 151,
+      "style": "note",
+      "content": "The Flight model splits a wave into sequential flights when parallel agents would conflict on shared files. Issues #13 and #14 both touch index.ts, so they can't run simultaneously. Flight 1 establishes the pattern, Flight 2 builds on it. This is how you get parallelism without merge conflicts."
+    },
+    {
+      "id": "cal-protocol-violation",
+      "after_beat": 496,
+      "style": "warning",
+      "content": "The agent committed and merged without presenting the checklist or getting approval \u2014 a direct violation of the mandatory pre-commit protocol. The user's correction is firm but understanding: 'I understand why you felt you had it. Lets stick to the protocol going forward.' Rules exist for the times when momentum makes you want to skip them."
+    },
+    {
+      "id": "cal-manual-verification",
+      "after_beat": 578,
+      "style": "warning",
+      "content": "The install script wrote hooks in the old format (flat object) instead of the new format (matcher + hooks array). Automated tests couldn't catch this \u2014 it's a runtime integration issue between two systems. This is exactly why manual verification procedures exist."
+    },
+    {
+      "id": "cal-emergency-response",
+      "after_beat": 622,
+      "style": "warning",
+      "content": "A real production emergency mid-lab: the classifier subprocess hangs and blocks the entire MCP server. Watch how the troubleshooting unfolds \u2014 this wasn't scripted, it's a genuine incident that happened during the lab recording."
+    },
+    {
+      "id": "cal-prodcon-pattern",
+      "after_beat": 700,
+      "style": "note",
+      "content": "The fix isn't a patch \u2014 it's an architectural refactor to a producer-consumer pattern. The classifier becomes an independent consumer that processes a queue, decoupled from the MCP request cycle. This eliminates the hang by removing the synchronous dependency."
+    },
+    {
+      "id": "cal-quiescence-design",
+      "after_beat": 850,
+      "style": "note",
+      "content": "Quiescence mode is designed to minimize recording overhead when the agent isn't actively troubleshooting. The /wtf imout command suspends the flight recorder \u2014 hooks still fire but entries are classified as 'noise' and filtered from the timeline."
+    }
+  ],
+  "artifacts": [
+    {
+      "id": "art-wave-plan",
+      "after_beat": 28,
+      "title": "Wave Execution Plan",
+      "description": "The 5-wave implementation plan driving this lab",
+      "content_type": "markdown",
+      "content": "## Wave Plan (11 issues across 5 waves)\n\n| Wave | Theme | Issues | Parallel? |\n|------|-------|--------|-----------|\n| 1 | Foundation | #11 (scaffold + DB + CI) | Solo |\n| 2 | Core Tools | #12 (wtf_now), #13 (wtf_freshell), #14 (wtf_happened) | 3-way |\n| 3 | Automation | #15 (hook+queue), #16 (classifier) | 2-way |\n| 4 | Integration | #17 (runbook), #18 (skills), #19 (install), #20 (docs) | 4-way |\n| 5 | Verification | #21 (manual testing) | Solo |\n\n**Total: 81 tests across all waves**"
     }
   ]
 }

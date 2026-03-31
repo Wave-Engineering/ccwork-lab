@@ -1,61 +1,86 @@
 {
   "session_id": "lab-05a-design-your-mcp-server",
   "sections": [
-    {"id": "sec-setup", "label": "Lab Setup & Orientation", "start_beat": 0, "end_beat": 47, "color": "blue"},
-    {"id": "sec-design-workshop", "label": "Design Workshop: WTF Concept", "start_beat": 48, "end_beat": 92, "color": "purple"},
-    {"id": "sec-prd-draft", "label": "PRD Drafting", "start_beat": 93, "end_beat": 136, "color": "green"},
-    {"id": "sec-prd-review", "label": "PRD Review & Iteration", "start_beat": 137, "end_beat": 266, "color": "teal"},
-    {"id": "sec-prd-commit", "label": "Code Review & PRD Commit", "start_beat": 267, "end_beat": 394, "color": "orange"},
-    {"id": "sec-issues-prep", "label": "Issue Decomposition & Prepwaves", "start_beat": 395, "end_beat": 527, "color": "amber"},
-    {"id": "sec-transition", "label": "Lab 05a Wrap-up & 05b Transition", "start_beat": 528, "end_beat": 616, "color": "slate"},
-    {"id": "sec-wave1", "label": "Wave 1: Foundation", "start_beat": 617, "end_beat": 719, "color": "blue"},
-    {"id": "sec-wave2", "label": "Wave 2: Core MCP Tools", "start_beat": 720, "end_beat": 865, "color": "purple"},
-    {"id": "sec-wave3", "label": "Wave 3: Automation Layer", "start_beat": 866, "end_beat": 964, "color": "green"},
-    {"id": "sec-wave4", "label": "Wave 4: Integration & Protocol Violation", "start_beat": 965, "end_beat": 1098, "color": "red"},
-    {"id": "sec-wave5", "label": "Wave 5: Verification & Install Bug Fix", "start_beat": 1099, "end_beat": 1176, "color": "indigo"}
+    {
+      "id": "sec-setup",
+      "label": "Lab Setup & Orientation",
+      "start_beat": 0,
+      "end_beat": 47,
+      "color": "blue"
+    },
+    {
+      "id": "sec-design-workshop",
+      "label": "Design Workshop: WTF Concept",
+      "start_beat": 48,
+      "end_beat": 92,
+      "color": "purple"
+    },
+    {
+      "id": "sec-prd-draft",
+      "label": "PRD Drafting",
+      "start_beat": 93,
+      "end_beat": 136,
+      "color": "green"
+    },
+    {
+      "id": "sec-prd-review",
+      "label": "PRD Review & Iteration",
+      "start_beat": 137,
+      "end_beat": 266,
+      "color": "teal"
+    },
+    {
+      "id": "sec-prd-commit",
+      "label": "Code Review & PRD Commit",
+      "start_beat": 267,
+      "end_beat": 394,
+      "color": "orange"
+    },
+    {
+      "id": "sec-issues-prep",
+      "label": "Issue Decomposition & Prepwaves",
+      "start_beat": 395,
+      "end_beat": 527,
+      "color": "amber"
+    },
+    {
+      "id": "sec-transition",
+      "label": "Lab 05a Wrap-up & 05b Transition",
+      "start_beat": 528,
+      "end_beat": 588,
+      "color": "slate"
+    }
   ],
   "callouts": [
     {
       "id": "cal-skill-ccwork",
       "after_beat": 0,
       "style": "note",
-      "content": "SKILL: /ccwork — Onboarding hub and lab runner. Loads lab exercises, creates tracking issues, and sets up starting branches."
+      "content": "SKILL: /ccwork \u2014 Onboarding hub and lab runner. Loads lab exercises, creates tracking issues, and sets up starting branches."
     },
     {
       "id": "cal-skill-view",
       "after_beat": 146,
       "style": "note",
-      "content": "SKILL: /view — Opens a file in the system's default GUI viewer for visual inspection outside the terminal."
+      "content": "SKILL: /view \u2014 Opens a file in the system's default GUI viewer for visual inspection outside the terminal."
     },
     {
       "id": "cal-skill-scpmmr",
       "after_beat": 347,
       "style": "note",
-      "content": "SKILL: /scpmmr — Full pipeline: Stage → Commit → Push → create MR → Merge. Requires precheck approval before executing."
+      "content": "SKILL: /scpmmr \u2014 Full pipeline: Stage \u2192 Commit \u2192 Push \u2192 create MR \u2192 Merge. Requires precheck approval before executing."
     },
     {
       "id": "cal-skill-prepwaves",
       "after_beat": 433,
       "style": "note",
-      "content": "SKILL: /prepwaves — Analyzes a master issue, validates all sub-issue specs for completeness, computes dependency waves, and prepares for parallel agent execution. This is the planning step before launching wave-based implementation."
-    },
-    {
-      "id": "cal-skill-engage",
-      "after_beat": 616,
-      "style": "note",
-      "content": "SKILL: /engage — Session onboarding ritual. Re-run here because the session is transitioning from Lab 05a to Lab 05b without a restart. Re-engaging reloads the rules of engagement for the new context."
-    },
-    {
-      "id": "cal-skill-nextwave",
-      "after_beat": 641,
-      "style": "note",
-      "content": "SKILL: /nextwave — Executes the next pending wave of parallel spec-driven sub-agents. Each agent runs on an isolated git worktree to prevent conflicts. The parent agent reviews all output before merging."
+      "content": "SKILL: /prepwaves \u2014 Analyzes a master issue, validates all sub-issue specs for completeness, computes dependency waves, and prepares for parallel agent execution. This is the planning step before launching wave-based implementation."
     },
     {
       "id": "cal-schema-on-read",
       "after_beat": 67,
       "style": "note",
-      "content": "The agent reframes the user's capture engine concept as 'schema-on-read instead of schema-on-write' — capture everything raw, classify later. This is a powerful design pattern: don't force structure at ingestion time when you're not sure what matters yet."
+      "content": "The agent reframes the user's capture engine concept as 'schema-on-read instead of schema-on-write' \u2014 capture everything raw, classify later. This is a powerful design pattern: don't force structure at ingestion time when you're not sure what matters yet."
     },
     {
       "id": "cal-three-layer",
@@ -67,49 +92,31 @@
       "id": "cal-classifier-pivot",
       "after_beat": 83,
       "style": "note",
-      "content": "Watch the classifier evolve through three iterations in one conversation: sub-agent spawn → inline classification → Bedrock SDK. Each pivot is driven by a real constraint (API access, latency, complexity). Design is iterative — the first idea is rarely the final architecture."
+      "content": "Watch the classifier evolve through three iterations in one conversation: sub-agent spawn \u2192 inline classification \u2192 Bedrock SDK. Each pivot is driven by a real constraint (API access, latency, complexity). Design is iterative \u2014 the first idea is rarely the final architecture."
     },
     {
       "id": "cal-parallel-research",
       "after_beat": 107,
       "style": "note",
-      "content": "Three research agents launched in parallel to resolve PRD gaps: SQLite WAL behavior, Claude Code sub-agent APIs, and settings.json schema. This is the agent equivalent of 'I need to look three things up before I can write this section' — parallel research beats sequential."
+      "content": "Three research agents launched in parallel to resolve PRD gaps: SQLite WAL behavior, Claude Code sub-agent APIs, and settings.json schema. This is the agent equivalent of 'I need to look three things up before I can write this section' \u2014 parallel research beats sequential."
     },
     {
       "id": "cal-bedrock-pivot",
       "after_beat": 216,
       "style": "note",
-      "content": "The user mentions Bedrock access exists, triggering a major design pivot from CLI subprocess to SDK-based classifier. This cascades through constraints, requirements, stories, CI pipeline, and technology table. One new fact can reshape an entire design — this is why PRD review matters."
+      "content": "The user mentions Bedrock access exists, triggering a major design pivot from CLI subprocess to SDK-based classifier. This cascades through constraints, requirements, stories, CI pipeline, and technology table. One new fact can reshape an entire design \u2014 this is why PRD review matters."
     },
     {
       "id": "cal-code-review-prd",
       "after_beat": 283,
       "style": "note",
-      "content": "Running code review on a PRD document — not just code. The reviewer found 9 issues including VRTM inconsistencies, invalid SQLite syntax, and wrong SDK package names. Quality gates apply to all artifacts, not just source code."
+      "content": "Running code review on a PRD document \u2014 not just code. The reviewer found 9 issues including VRTM inconsistencies, invalid SQLite syntax, and wrong SDK package names. Quality gates apply to all artifacts, not just source code."
     },
     {
       "id": "cal-freshell",
       "after_beat": 490,
       "style": "note",
       "content": "wtf_freshell: 'fresh hell' jammed together, officially 'free shell.' Naming decisions like this seem cosmetic but they make tools memorable and fun to use. A tool nobody remembers the name of is a tool nobody uses."
-    },
-    {
-      "id": "cal-flight-model",
-      "after_beat": 740,
-      "style": "note",
-      "content": "The Flight model splits a wave into sequential flights when parallel agents would conflict on shared files. Issues #13 and #14 both touch index.ts, so they can't run simultaneously. Flight 1 establishes the pattern, Flight 2 builds on it. This is how you get parallelism without merge conflicts."
-    },
-    {
-      "id": "cal-protocol-violation",
-      "after_beat": 1085,
-      "style": "warning",
-      "content": "The agent committed and merged without presenting the checklist or getting approval — a direct violation of the mandatory pre-commit protocol. The user's response is the model correction: firm but understanding. 'I understand why you felt you had it. Lets stick to the protocol going forward.' Rules exist for the times when momentum makes you want to skip them."
-    },
-    {
-      "id": "cal-manual-verification",
-      "after_beat": 1167,
-      "style": "warning",
-      "content": "The install script wrote hooks in the old format (flat object) instead of the new format (matcher + hooks array). Automated tests couldn't catch this — it's a runtime integration issue between two systems. This is exactly why manual verification procedures exist: some bugs only surface at the boundaries between components."
     }
   ],
   "artifacts": [
@@ -119,7 +126,7 @@
       "title": "WTF Server: Three-Layer Architecture",
       "description": "The architecture that emerged from the design workshop",
       "content_type": "markdown",
-      "content": "## Three-Layer Architecture\n\n| Layer | Component | Responsibility |\n|-------|-----------|---------------|\n| **Orchestration** | `/wtf` skill | User-facing commands, mode switching |\n| **Capture** | PostToolUse hook | Automatic tool call recording |\n| **Storage** | MCP Server | SQLite DB, classification, timeline generation |\n\n### MCP Tools\n- `wtf_now` — Manual journal entry\n- `wtf_freshell` — Clear incident state\n- `wtf_happened` — Generate distilled timeline\n\n### Key Design Decisions\n- Schema-on-read: capture raw, classify later\n- Single incident model (one at a time)\n- Bedrock SDK for background classification\n- `.wtf/` directory in project root for state"
+      "content": "## Three-Layer Architecture\n\n| Layer | Component | Responsibility |\n|-------|-----------|---------------|\n| **Orchestration** | `/wtf` skill | User-facing commands, mode switching |\n| **Capture** | PostToolUse hook | Automatic tool call recording |\n| **Storage** | MCP Server | SQLite DB, classification, timeline generation |\n\n### MCP Tools\n- `wtf_now` \u2014 Manual journal entry\n- `wtf_freshell` \u2014 Clear incident state\n- `wtf_happened` \u2014 Generate distilled timeline\n\n### Key Design Decisions\n- Schema-on-read: capture raw, classify later\n- Single incident model (one at a time)\n- Bedrock SDK for background classification\n- `.wtf/` directory in project root for state"
     },
     {
       "id": "art-wave-plan",
