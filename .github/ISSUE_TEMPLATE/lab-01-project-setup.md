@@ -8,6 +8,7 @@ labels: ["lab"]
 **Init tag:** `lab/01-init`
 **Solution tag:** `lab/01-solution`
 **Session replay:** `labs/01/session.jsonl`
+**Curated session:** `lab-01-project-setup`
 
 ## Objective
 Set up a project for Claude Code workflow development. Learn how `/ccfold` generates CLAUDE.md, how platform detection works, and how `/engage` confirms the rules of engagement.

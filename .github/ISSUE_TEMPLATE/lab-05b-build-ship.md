@@ -7,6 +7,7 @@ labels: ["lab"]
 **Start branch:** `lab/05-start`
 **Solution tag:** `lab/05b-solution`
 **Session replay:** `labs/05b/session.jsonl`
+**Curated session:** `lab-05b-build-and-ship-it`
 
 ## Objective
 Execute the wave plan you created in Lab 05a. Watch agents implement your design in parallel, review their work, merge PRs, and end up with a working MCP server registered in your Claude Code session.
@@ -77,4 +78,4 @@ claude mcp add --scope project --transport stdio my-server -- bun index.ts
 You've completed the full Claude Code workflow — from PRD to running code, with parallel agent execution, automated code review, and wave-based delivery. The MCP server you built is yours to keep and extend.
 
 ## Stuck?
-Load `labs/05b/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch an example execution session.
+Watch the curated walkthrough on [Clawback](https://clawback.apps.oakai.waveeng.com/?session=lab-05b-build-and-ship-it&autoplay=true) — an example execution session.

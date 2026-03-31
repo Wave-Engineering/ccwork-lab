@@ -8,6 +8,7 @@ labels: ["lab"]
 **Init tag:** `lab/02-init`
 **Solution tag:** `lab/02-solution`
 **Session replay:** `labs/02/session.jsonl`
+**Curated session:** `lab-02-your-first-workflow`
 
 ## Objective
 Learn the full mandatory workflow: issue → branch → code → /precheck → /scp → PR → close.

@@ -8,6 +8,7 @@ labels: ["lab"]
 **Init tag:** `lab/03-init`
 **Solution tag:** `lab/03-solution`
 **Session replay:** `labs/03/session.jsonl`
+**Curated session:** `lab-03-identity-and-check-in`
 
 ## Objective
 Understand how Claude Code agents establish identity each session, and how the /engage workflow confirms rules of engagement.

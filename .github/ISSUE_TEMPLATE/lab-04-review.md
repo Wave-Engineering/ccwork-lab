@@ -8,6 +8,7 @@ labels: ["lab"]
 **Init tag:** `lab/04-init`
 **Solution tag:** `lab/04-solution`
 **Session replay:** `labs/04/session.jsonl`
+**Curated session:** `lab-04-code-review`
 
 ## Objective
 Learn how to use `/review` to catch code quality issues, interpret findings by severity, and fix them before they ship.

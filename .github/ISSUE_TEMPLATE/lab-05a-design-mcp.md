@@ -7,6 +7,7 @@ labels: ["lab"]
 **Start branch:** `lab/05-start`
 **Solution tag:** `lab/05a-solution`
 **Session replay:** `labs/05a/session.jsonl`
+**Curated session:** `lab-05a-design-your-mcp-server`
 
 ## Objective
 Design an MCP (Model Context Protocol) tool server from scratch. You'll pick a domain, write a PRD, decompose it into issues, and plan wave-based parallel execution — all before writing a single line of implementation code.
@@ -84,4 +85,4 @@ Typical decomposition:
 Continue to **Lab 05b: Build and Ship It** to execute your plan with `/nextwave` and end up with a working MCP server.
 
 ## Stuck?
-Load `labs/05a/session.jsonl` into [Clawback](https://github.com/bakeb7j0/clawback) to watch an example design session for a dice-roller + unit-converter MCP server.
+Watch the curated walkthrough on [Clawback](https://clawback.apps.oakai.waveeng.com/?session=lab-05a-design-your-mcp-server&autoplay=true) — an example design session for a dice-roller + unit-converter MCP server.
