@@ -13,6 +13,7 @@ uses this file to detect a lab repo and display completion status.
 | 04 | Code Review | [ ] |
 | 05a | Design Your MCP Server | [ ] |
 | 05b | Build and Ship It | [ ] |
+| 06 | Your First Wave | [ ] |
 
 ## How to Use
 
